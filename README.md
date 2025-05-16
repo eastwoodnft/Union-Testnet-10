@@ -22,7 +22,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 6. Download Binaries
 ```
-wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.0.0-rc3.alpha1/uniond-release-x86_64-linux
+wget https://github.com/unionlabs/union/archive/refs/tags/uniond/v1.0.0-rc3.alpha1.tar.gz
 mkdir -p $HOME/.union/cosmovisor/genesis/bin
 sudo tar -xzf uniond.x86_64-linux.tar.gz
 cp result/bin/uniond $HOME/.union/cosmovisor/genesis/bin/uniond
@@ -86,8 +86,7 @@ uniond init $MONIKER --chain-id union-testnet-10 --home=$HOME/.union
 ```
 14. Download genesis and addrbook
 ```
-curl -Ls https://snapshots.kjnodes.com/union-testnet/genesis.json > $HOME/.union/config/genesis.json
-curl -Ls https://snapshots.kjnodes.com/union-testnet/addrbook.json > $HOME/.union/config/addrbook.json
+curl -Ls https://raw.githubusercontent.com/unionlabs/union/refs/heads/main/networks/genesis/union-testnet-10/genesis.json > $HOME/.union/config/genesis.json
 ```
 15. Add seeds
 ```
