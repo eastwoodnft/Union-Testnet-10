@@ -24,7 +24,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 wget https://github.com/unionlabs/union/archive/refs/tags/uniond/v1.0.0-rc3.alpha1.tar.gz
 mkdir -p $HOME/.union/cosmovisor/genesis/bin
-sudo tar -xzf uniond.x86_64-linux.tar.gz
+sudo tar -xzf v1.0.0-rc3.alpha1.tar.gz
 cp result/bin/uniond $HOME/.union/cosmovisor/genesis/bin/uniond
 chmod +x $HOME/.union/cosmovisor/genesis/bin/uniond
 rm uniond.x86_64-linux.tar.gz
