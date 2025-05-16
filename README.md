@@ -22,7 +22,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 6. Download Binaries
 ```
-wget https://github.com/unionlabs/union/releases/tag/uniond%2Fv1.0.0-rc3.alpha1
+wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.0.0-rc3.alpha1/uniond-release-x86_64-linux
 mkdir -p $HOME/.union/cosmovisor/genesis/bin
 sudo tar -xzf uniond.x86_64-linux.tar.gz
 cp result/bin/uniond $HOME/.union/cosmovisor/genesis/bin/uniond
