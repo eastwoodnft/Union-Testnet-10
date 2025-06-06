@@ -77,9 +77,10 @@ Steps to Stage the Upgrade
 
    [Install]
    WantedBy=multi-user.target
-```
+   ```
+
    Reload and restart the service:
-```
+   ```
    sudo systemctl daemon-reload
    sudo systemctl restart cosmovisor
    ```
