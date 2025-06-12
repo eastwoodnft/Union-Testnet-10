@@ -27,7 +27,7 @@ Steps to Stage the Upgrade
 
    Create the directory structure for the upgrade in your node’s home directory (~/.union):
    ```
-   mkdir -p ~/.union/cosmovisor/upgrades/v1.1.0-rc1.alpha1/bin
+   mkdir -p ~/.union/cosmovisor/upgrades/v1.1.0/bin
    ```
 
    Note: Replace v1.1.0-rc1.alpha1 with the exact upgrade name if it differs. Check the Union testnet governance proposal or documentation for the correct name.
@@ -36,82 +36,45 @@ Steps to Stage the Upgrade
 
    Move the downloaded binary to the upgrade directory:
    ```
-   mv uniond ~/.union/cosmovisor/upgrades/v1.1.0-rc1.alpha1/bin/uniond
+   mv uniond ~/.union/cosmovisor/upgrades/v1.1.0/bin/uniond
    ```
 
 6. Verify the Binary
 
    Confirm the binary version:
    ```
-   ~/.union/cosmovisor/upgrades/v1.1.0-rc1.alpha1/bin/uniond version
+   ~/.union/cosmovisor/upgrades/v1.1.0/bin/uniond version
    ```
 
-   The output should show v1.1.0-rc1.alpha1 or similar.
+   The output should show v1.1.0 or similar.
 
-8. Configure Cosmovisor
-
-   Set the required environment variables for Cosmovisor. Add them to your shell configuration (e.g., ~/.bashrc or ~/.zshrc):
-   ```
-   echo 'export DAEMON_NAME=uniond' >> ~/.bashrc
-   echo 'export DAEMON_HOME=~/.union' >> ~/.bashrc
-   echo 'export DAEMON_ALLOW_DOWNLOAD_BINARIES=false' >> ~/.bashrc
-   echo 'export DAEMON_RESTART_AFTER_UPGRADE=true' >> ~/.bashrc
-   source ~/.bashrc
-   ```
-
-   If using a systemd service, create or update /etc/systemd/system/cosmovisor.service:
-   ```
-   [Unit]
-   Description=Cosmovisor daemon for Union testnet
-   After=network-online.target
-
-   [Service]
-   User=<your-username>
-   ExecStart=/usr/local/bin/cosmovisor run start
-   Restart=always
-   RestartSec=3
-   Environment="DAEMON_NAME=uniond"
-   Environment="DAEMON_HOME=~/.union"
-   Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
-   Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-
-   [Install]
-   WantedBy=multi-user.target
-   ```
-
-   Reload and restart the service:
-   ```
-   sudo systemctl daemon-reload
-   sudo systemctl restart cosmovisor
-   ```
-
-10. Start or Ensure Cosmovisor is Running
+7. Start or Ensure Cosmovisor is Running
 
    If Cosmovisor is not already running, start it:
    ```
    cosmovisor run start
-```
+   ```
 
    Cosmovisor will monitor the chain and switch to the new binary at the specified upgrade height.
 
-11. Monitor the Upgrade
+8. Monitor the Upgrade
 
    Check Cosmovisor logs to ensure the upgrade executes smoothly:
    ```
    journalctl -u cosmovisor -f
-```
+   ```
 
-11. Post-Upgrade Verification
+9. Post-Upgrade Verification
 
    After the upgrade, verify the node is running the new binary:
    ```
    uniond version
-```
+   ```
 
    Confirm the node is syncing and producing blocks:
    ```
    curl http://localhost:26657/status
-```
+   ```
 
    Check the latest_block_height and syncing fields in the output.
 
