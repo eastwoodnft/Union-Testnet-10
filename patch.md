@@ -8,11 +8,19 @@ systemctl stop union-testnet.service
 ```
 Replace the binary with the new v1.1.1
 ```
-cp ~/uniond_patch ~/.union/cosmovisor/current/bin/
+mv ~/uniond_patch ~/.union/cosmovisor/current/bin/
 ```
 Ensure it has proper permissions
 ```
-chmod +x $DAEMON_HOME/cosmovisor/current/bin/$DAEMON_NAM
+chmod +x $DAEMON_HOME/cosmovisor/current/bin/uniond_patch
+```
+check the version
+```
+uniond_patch version
+```
+replace the current binary
+```
+mv uniond_patch uniond
 ```
 Start your node
 ```
