@@ -4,7 +4,7 @@ wget -O uniond_patch https://github.com/unionlabs/union/releases/download/uniond
 ```
 Stop uniond
 ```
-systemctl stop union=testnet.service
+systemctl stop union-testnet.service
 ```
 Replace the binary with the new v1.1.1
 ```
