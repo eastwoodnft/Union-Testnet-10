@@ -1,6 +1,6 @@
 download the patched binary
 ```
-wget -O https://github.com/unionlabs/union/releases/download/uniond%2Fv1.1.1-rc1.alpha1/uniond-release-x86_64-linux uniond_patch
+wget -O uniond_patch https://github.com/unionlabs/union/releases/download/uniond%2Fv1.1.1-rc1.alpha1/uniond-release-x86_64-linux 
 ```
 Stop uniond
 ```
