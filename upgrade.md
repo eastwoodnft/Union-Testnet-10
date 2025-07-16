@@ -36,7 +36,7 @@ chmod +x uniond
 
    Move the downloaded binary to the upgrade directory:
    ```
-   mv uniond ~/.union/cosmovisor/upgrades/v1.2.0/bin/uniond
+   mv ~/uniond ~/.union/cosmovisor/upgrades/v1.2.0/bin/uniond
    ```
 
 6. Verify the Binary
