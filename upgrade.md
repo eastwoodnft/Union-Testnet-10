@@ -17,7 +17,7 @@ Steps to Stage the Upgrade
 
    Download the uniond binary for version v1.1.0-rc1.alpha1:
 ```
-   wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.1.0-rc1.alpha1/uniond-release-x86_64-linux -O uniond
+   wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.2.0-rc1alpha1/uniond-release-x86_64-linux -O uniond
 ```
    Make the binary executable:
 ```
@@ -27,44 +27,35 @@ Steps to Stage the Upgrade
 
    Create the directory structure for the upgrade in your node’s home directory (~/.union):
    ```
-   mkdir -p ~/.union/cosmovisor/upgrades/v1.1.0/bin
+   mkdir -p ~/.union/cosmovisor/upgrades/v1.2.0/bin
    ```
 
-   Note: Replace v1.1.0-rc1.alpha1 with the exact upgrade name if it differs. Check the Union testnet governance proposal or documentation for the correct name.
+   Note: Replace "v1.X.X-rc1.alpha1" with the exact upgrade name if it differs. Check the Union testnet governance proposal or documentation for the correct name.
 
 4. Place the Binary
 
    Move the downloaded binary to the upgrade directory:
    ```
-   mv uniond ~/.union/cosmovisor/upgrades/v1.1.0/bin/uniond
+   mv uniond ~/.union/cosmovisor/upgrades/v1.2.0/bin/uniond
    ```
 
 6. Verify the Binary
 
    Confirm the binary version:
    ```
-   ~/.union/cosmovisor/upgrades/v1.1.0/bin/uniond version
+   ~/.union/cosmovisor/upgrades/v1.2.0/bin/uniond version
    ```
 
    The output should show v1.1.0 or similar.
 
-7. Start or Ensure Cosmovisor is Running
-
-   If Cosmovisor is not already running, start it:
-   ```
-   cosmovisor run start
-   ```
-
-   Cosmovisor will monitor the chain and switch to the new binary at the specified upgrade height.
-
-8. Monitor the Upgrade
+7. Monitor the Upgrade
 
    Check Cosmovisor logs to ensure the upgrade executes smoothly:
    ```
    journalctl -u cosmovisor -f
    ```
 
-9. Post-Upgrade Verification
+8. Post-Upgrade Verification
 
    After the upgrade, verify the node is running the new binary:
    ```
