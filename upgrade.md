@@ -17,7 +17,7 @@ Steps to Stage the Upgrade
 
    Download the uniond binary for version v1.1.0-rc1.alpha1:
 ```
-wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.2.0-rc1alpha1/uniond-release-x86_64-linux -O uniond
+wget https://github.com/unionlabs/union/releases/download/uniond%2Fv1.2.0-rc2.alpha1/uniond-release-x86_64-linux -O uniond
 ```
    Make the binary executable:
 ```
